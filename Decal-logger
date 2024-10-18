@@ -49,3 +49,4 @@ DiscordButton.MouseButton1Click:Connect(function()
     setclipboard("https://discord.gg/4QRRmgEHx") -- Copia o link para a área de transferência
     ScreenGui:Destroy() -- Destroi a interface
 end)
+-- hi
