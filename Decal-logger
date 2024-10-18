@@ -1,0 +1,51 @@
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ButtonContainer = Instance.new("Frame") 
+local ExecuteButton = Instance.new("TextButton")
+local DiscordButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+
+-- Configuração da Tela
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(35, 35, 35) -- Cor de fundo
+Frame.Size = UDim2.new(0.3, 0, 0.3, 0) -- Ocupa 30% da largura e 30% da altura da tela
+Frame.Position = UDim2.new(0.35, 0, 0.35, 0) -- Centraliza o Frame na tela
+
+-- Arredondando as bordas do Frame
+local frameCorner = Instance.new("UICorner")
+frameCorner.CornerRadius = UDim.new(0.1, 0) -- Arredondamento das bordas do Frame
+frameCorner.Parent = Frame
+
+-- Texto de aviso
+TextLabel.Parent = Frame
+TextLabel.Text = "The script is experiencing bugs and we are fixing it. Join our Discord to stay updated."
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- Cor do texto
+TextLabel.BackgroundTransparency = 1 -- Transparência de fundo
+TextLabel.Size = UDim2.new(1, 0, 0.6, 0) -- Tamanho do texto
+TextLabel.Position = UDim2.new(0, 0, 0.1, 0) -- Posição do texto
+TextLabel.TextWrapped = true
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.TextScaled = true
+
+-- Botão do Discord
+DiscordButton.Parent = Frame
+DiscordButton.Text = "Discord"
+DiscordButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0) -- Cor do botão em vermelho
+DiscordButton.TextColor3 = Color3.fromRGB(255, 255, 255) -- Cor do texto em branco
+DiscordButton.Size = UDim2.new(0.6, 0, 0.2, 0) -- Tamanho do botão
+DiscordButton.Position = UDim2.new(0.2, 0, 0.7, 0) -- Posição do botão
+DiscordButton.Font = Enum.Font.SourceSans
+DiscordButton.TextScaled = true
+
+-- Arredondando as bordas do Botão do Discord
+local discordButtonCorner = Instance.new("UICorner")
+discordButtonCorner.CornerRadius = UDim.new(0.1, 0) -- Arredondamento das bordas do botão
+discordButtonCorner.Parent = DiscordButton
+
+-- Função para destruir a interface e copiar o link do Discord
+DiscordButton.MouseButton1Click:Connect(function()
+    setclipboard("https://discord.gg/4QRRmgEHx") -- Copia o link para a área de transferência
+    ScreenGui:Destroy() -- Destroi a interface
+end)
