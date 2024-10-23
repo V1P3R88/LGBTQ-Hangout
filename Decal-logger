@@ -20,7 +20,7 @@ frameCorner.Parent = Frame
 
 -- Texto de aviso
 TextLabel.Parent = Frame
-TextLabel.Text = "The script is experiencing bugs and we are fixing it. Join our Discord to stay updated."
+TextLabel.Text = "The Script Is Undergoing An Update In Its Source Code, Enter The Server To Stay Up To Date."
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255) -- Cor do texto
 TextLabel.BackgroundTransparency = 1 -- Transparência de fundo
 TextLabel.Size = UDim2.new(1, 0, 0.6, 0) -- Tamanho do texto
