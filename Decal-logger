@@ -1,1 +1,45 @@
-temporarily unavailable 
+local ScreenGui = Instance.new("ScreenGui")
+local Frame = Instance.new("Frame")
+local ButtonContainer = Instance.new("Frame") 
+local ExecuteButton = Instance.new("TextButton")
+local DiscordButton = Instance.new("TextButton")
+local TextLabel = Instance.new("TextLabel")
+
+ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = ScreenGui
+Frame.BackgroundColor3 = Color3.fromRGB(35, 35, 35)
+Frame.Size = UDim2.new(0.3, 0, 0.3, 0)
+Frame.Position = UDim2.new(0.35, 0, 0.35, 0)
+
+local frameCorner = Instance.new("UICorner")
+frameCorner.CornerRadius = UDim.new(0.1, 0)
+frameCorner.Parent = Frame
+
+TextLabel.Parent = Frame
+TextLabel.Text = "the script is    temporarily unavailable."
+TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
+TextLabel.BackgroundTransparency = 1
+TextLabel.Size = UDim2.new(1, 0, 0.6, 0)
+TextLabel.Position = UDim2.new(0, 0, 0.1, 0)
+TextLabel.TextWrapped = true
+TextLabel.Font = Enum.Font.SourceSans
+TextLabel.TextScaled = true
+
+DiscordButton.Parent = Frame
+DiscordButton.Text = "Discord"
+DiscordButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+DiscordButton.TextColor3 = Color3.fromRGB(255, 255, 255)
+DiscordButton.Size = UDim2.new(0.6, 0, 0.2, 0)
+DiscordButton.Position = UDim2.new(0.2, 0, 0.7, 0)
+DiscordButton.Font = Enum.Font.SourceSans
+DiscordButton.TextScaled = true
+
+local discordButtonCorner = Instance.new("UICorner")
+discordButtonCorner.CornerRadius = UDim.new(0.1, 0)
+discordButtonCorner.Parent = DiscordButton
+
+DiscordButton.MouseButton1Click:Connect(function()
+    setclipboard("https://discord.gg/4QRRmgEHx")
+    ScreenGui:Destroy()
+end)
